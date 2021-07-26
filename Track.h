@@ -18,8 +18,8 @@ public:
     int getPopularity();
     int getExplicit();
     int getReleaseYear();
-    int getDanceability();
-    int getEnergy();
-    int getValence();
+    float getDanceability();
+    float getEnergy();
+    float getValence();
 };
 

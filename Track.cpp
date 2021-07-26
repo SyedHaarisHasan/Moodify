@@ -31,14 +31,14 @@ int Track::getReleaseYear() {
     return releaseYear;
 }
 
-int Track::getDanceability() {
+float Track::getDanceability() {
     return danceability;
 }
 
-int Track::getEnergy() {
+float Track::getEnergy() {
     return energy;
 }
 
-int Track::getValence() {
+float Track::getValence() {
     return valence;
 }
