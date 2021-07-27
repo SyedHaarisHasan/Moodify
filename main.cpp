@@ -16,7 +16,7 @@ int main() {
     int ds = 0;
     
     while (true) { // loops until user inputs valid number    
-        if ((ds < 1 && ds != 2) || (ds > 2 && ds != 1)) {
+        if (ds != 1 && ds != 2) {
             cout << "Which data structure would you like to use?\n";
             cout << "1. Map\n2. Hash Table\n\n";
             cin >> ds;
@@ -29,11 +29,11 @@ int main() {
     if (ds == 1) { // if data structure is map
 
     }
-    else if (ds == 2) { // if data structure is hash table
+    else { // if data structure is hash table
         HashTable table;
         loadHashTable(table);
 
-        table.printTable();
+        //table.printTable();
     }
 
     return 0;
@@ -42,6 +42,8 @@ int main() {
 void loadHashTable(HashTable& table) {
     ifstream file("data/tracks.csv");
     string name, artist, popularity, xplicit, releaseYear, danceability, energy, valence;
+
+    cout << "Loading..." << endl;
 
     getline(file, name); // clear header
     while (!file.eof()) { // File I/O
