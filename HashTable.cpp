@@ -1,5 +1,7 @@
 #include "HashTable.h"
-extern const int SIZE = 580418;
+#include <random>
+#include <ctime>
+extern const int SIZE = 580419;
 
 int HashTable::hash(string key) { // hash algorithm
     int index = 0;
@@ -9,8 +11,9 @@ int HashTable::hash(string key) { // hash algorithm
 
     index = index % 580471;
 
-    if (index < 0) // if index is invalid, add track to 0th index
-        return 0;
+    if (index < 0) { // if index is invalid, add track to 0th index
+        return 580418;
+    }
     else 
         return index;
 }
@@ -24,9 +27,14 @@ int HashTable::getSize() {
     return SIZE;
 }
 
-void HashTable::printTable() {
+list<Track> HashTable::operator[](int index) { // returns list of Tracks contained at 'index'
+    return hashTable[index];
+}
+
+void HashTable::printTable() { // prints the table // FOR DEBUGGING PURPOSES
         for (int i = 0; i < SIZE; i++) {         
-            for (auto it = hashTable[i].begin(); it != hashTable[i].end(); it++)
+            for (auto it = hashTable[i].begin(); it != hashTable[i].end(); it++) {
                 cout << it->getName() << endl;
+            }
         }
     }

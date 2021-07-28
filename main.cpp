@@ -27,13 +27,16 @@ int main() {
     }
 
     if (ds == 1) { // if data structure is map
+        // declare map
+        // load map
 
+        // INSERT SONG FUNCTIONALITY HERE
     }
     else { // if data structure is hash table
         HashTable table;
         loadHashTable(table);
 
-        //table.printTable();
+        // INSERT SONG FUNCTIONALITY HERE
     }
 
     return 0;
@@ -41,7 +44,7 @@ int main() {
 
 void loadHashTable(HashTable& table) {
     ifstream file("data/tracks.csv");
-    string name, artist, popularity, xplicit, releaseYear, danceability, energy, valence;
+    string name, artist, artistList, popularity, xplicit, releaseYear, danceability, energy, valence;
 
     cout << "Loading..." << endl;
 
@@ -50,19 +53,19 @@ void loadHashTable(HashTable& table) {
         getline(file, name, ',');
         getline(file, popularity, ',');
         getline(file, xplicit, ',');
-        getline(file, artist, ',');
+        getline(file, artistList, ',');
         getline(file, releaseYear, ',');
         getline(file, danceability, ',');
         getline(file, energy, ',');
         getline(file, valence, '\n');
 
-        if (releaseYear.size() != 4) // update 'releaseYear' if needed
-            releaseYear = releaseYear.substr(releaseYear.size() - 4, 4);
-
         for (auto& i : name) { // handle dollar signs in 'name'
             if (i == '$')
                 i = ',';
         }
+        
+        if (releaseYear.size() != 4) // update 'releaseYear' if needed
+            releaseYear = releaseYear.substr(releaseYear.size() - 4, 4);
 
         Track track(name, artist, stoi(popularity), stoi(xplicit), stoi(releaseYear), stof(danceability), stof(energy), stof(valence));
         table.insert(track);

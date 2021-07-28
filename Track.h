@@ -10,6 +10,7 @@ private:
     float danceability, energy, valence;
 public:
     //constructor
+    Track();
     Track(string _name, string _artist, int _popularity, int _xplicit, int _releaseYear, float _danceability, float _energy, float _valence);
 
     //accessors
@@ -21,5 +22,8 @@ public:
     float getDanceability();
     float getEnergy();
     float getValence();
+
+    //operators
+    //friend bool operator==(Track& lhs, Track& rhs);
 };
 

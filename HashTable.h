@@ -14,8 +14,12 @@ private:
 public:
     int hash(string key);
     void insert(Track track);
-    int getSize();
-    
     void printTable();
+
+    //accessors
+    int getSize();
+
+    //operators
+    list<Track> operator[](int index);
 };
 
