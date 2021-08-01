@@ -226,7 +226,7 @@ int main() {
 }
 
 void loadHashTable(HashTable& table) {
-    ifstream file("tracks.csv");
+    ifstream file("data/tracks.csv");
     string name, artist, popularity, xplicit, releaseYear, danceability, energy, valence;
 
     cout << "Loading..." << endl;
