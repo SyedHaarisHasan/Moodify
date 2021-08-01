@@ -22,8 +22,20 @@ int main() {
     }
 
     if (ds == 1) { // if data structure is map
-        // declare map
-        // load map
+        Map map;
+        loadMap(map);
+        vector<Track> v;
+        map.printInorder(map.root, v);
+        for (int i = 0; i < v.size(); i++) {
+            cout << v[i].getName() << ",";
+            cout << v[i].getArtist() << ",";
+            cout << v[i].getPopularity() << ",";
+            cout << v[i].getExplicit() << ",";
+            cout << v[i].getReleaseYear() << ",";
+            cout << v[i].getDanceability() << ",";
+            cout << v[i].getEnergy() << ",";
+            cout << v[i].getValence() << endl;
+        }
 
         // INSERT SONG FUNCTIONALITY HERE
     }
@@ -148,5 +160,40 @@ void loadHashTable(HashTable& table) {
 
         Track track(name, artist, stoi(popularity), stoi(xplicit), stoi(releaseYear), stof(danceability), stof(energy), stof(valence));
         table.insert(track);
+    }
+}
+
+void loadMap(Map& map) {
+    ifstream file("data/tracks.csv");
+    string name, artist, popularity, xplicit, releaseYear, danceability, energy, valence;
+    string name, artist, artistList, popularity, xplicit, releaseYear, danceability, energy, valence;
+
+    cout << "Loading..." << endl;
+
+    getline(file, name); // clear header
+    while (!file.eof()) { // File I/O
+        getline(file, name, ',');
+        getline(file, popularity, ',');
+        getline(file, xplicit, ',');
+        getline(file, artist, ',');
+        getline(file, artistList, ',');
+        getline(file, releaseYear, ',');
+        getline(file, danceability, ',');
+        getline(file, energy, ',');
+        getline(file, valence, '\n');
+
+        if (releaseYear.size() != 4) // update 'releaseYear' if needed
+            releaseYear = releaseYear.substr(releaseYear.size() - 4, 4);
+
+        for (auto& i : name) { // handle dollar signs in 'name'
+            if (i == '$')
+                i = ',';
+        }
+
+        if (releaseYear.size() != 4) // update 'releaseYear' if needed
+            releaseYear = releaseYear.substr(releaseYear.size() - 4, 4);
+
+        Track track(name, artist, stoi(popularity), stoi(xplicit), stoi(releaseYear), stof(danceability), stof(energy), stof(valence));
+        map.insert(track, map.root);
     }
 }
