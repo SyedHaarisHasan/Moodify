@@ -5,6 +5,7 @@
 using namespace std;
 
 void loadHashTable(HashTable& table);
+void loadMap(Map& map);
 
 int main() {
     cout << "Welcome to Moodify!\nPlease answer the following questions.\n\n"; // menu TO-FIX
@@ -165,7 +166,6 @@ void loadHashTable(HashTable& table) {
 
 void loadMap(Map& map) {
     ifstream file("data/tracks.csv");
-    string name, artist, popularity, xplicit, releaseYear, danceability, energy, valence;
     string name, artist, artistList, popularity, xplicit, releaseYear, danceability, energy, valence;
 
     cout << "Loading..." << endl;
