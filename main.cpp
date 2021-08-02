@@ -70,7 +70,7 @@ int main() {
         }
 
         duration = (clock() - start) / (double)CLOCKS_PER_SEC;
-        cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
+        cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "Are you ok if the song is explicit?" << endl;
         cout << "A: Yes" << endl;
@@ -87,7 +87,7 @@ int main() {
         }
 
         duration = (clock() - start) / (double)CLOCKS_PER_SEC;
-        cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
+        cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "Is there an artist you want to listen to? " << endl;
         cout << "A: Yes" << endl;
@@ -104,7 +104,7 @@ int main() {
             map.findSongArtist(map.root, playlist, name);
 
             duration = (clock() - start) / (double)CLOCKS_PER_SEC;
-            cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
+            cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
         }
 
         cout << "How old do you want your song to be" << endl;
@@ -136,7 +136,7 @@ int main() {
         }
 
         duration = (clock() - start) / (double)CLOCKS_PER_SEC;
-        cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
+        cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "How danceable do you want your song to be?" << endl;
         cout << "A: not danceable" << endl;
@@ -149,7 +149,7 @@ int main() {
         map.findSongDance(map.root, playlist, c);
 
         duration = (clock() - start) / (double)CLOCKS_PER_SEC;
-        cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
+        cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "How much energy do you want your song to be?" << endl;
         cout << "A: not much energy" << endl;
@@ -162,7 +162,7 @@ int main() {
         map.findSongValence(map.root, playlist, c);
 
         duration = (clock() - start) / (double)CLOCKS_PER_SEC;
-        cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
+        cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "How valence do you want your song to be?" << endl;
         cout << "A: not much valence" << endl;
@@ -175,7 +175,7 @@ int main() {
         map.findSongEnergy(map.root, playlist, c);
 
         duration = (clock() - start) / (double)CLOCKS_PER_SEC;
-        cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
+        cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "Ok, here are 5 songs that we think you might like" << endl;
         for (int i = 0; i < 5; i++) {
