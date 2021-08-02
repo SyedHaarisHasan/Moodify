@@ -3,7 +3,7 @@
 #include <ctime>
 #include <iostream>
 using namespace std;
-extern const int SIZE = 580419;
+extern const int SIZE = 130003;
 
 int HashTable::hash(string key) { // hash algorithm
     int index = 0;
@@ -11,10 +11,10 @@ int HashTable::hash(string key) { // hash algorithm
     for (int i = 1; i <= key.size(); i++)
         index += key[i - 1] * i;
 
-    index = index % 580471;
+    index = index % 130002;
 
     if (index < 0) { // if index is invalid, add track to 0th index
-        return 580418;
+        return 130002;
     }
     else
         return index;
