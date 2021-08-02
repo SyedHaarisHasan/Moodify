@@ -13,7 +13,7 @@ int HashTable::hash(string key) { // hash algorithm
 
     index = index % 130002;
 
-    if (index < 0) { // if index is invalid, add track to 0th index
+    if (index < 0) { // if index is invalid, add track to last index
         return 130002;
     }
     else
