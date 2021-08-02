@@ -15,7 +15,6 @@ private:
 public:
     int hash(string key);
     void insert(Track track);
-    void printTable();
     vector<Track> findSongName(vector<Track>& playlist, string song);
     vector<Track> findSongArtist(vector<Track>& playlist, string artist);
     vector<Track> findSongPopular(vector<Track>& playlist, bool isPopular);
