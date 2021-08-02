@@ -33,7 +33,7 @@ int main() {
 
         loadMap(map);
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to load Map: " << duration << " seconds." << endl;
 
         vector<Track> playlist;
@@ -51,7 +51,7 @@ int main() {
 
             map.findSongName(map.root, playlist, song);
 
-            duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+            duration = (clock() - start) / (double)CLOCKS_PER_SEC;
             cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
         }
 
@@ -69,7 +69,7 @@ int main() {
             map.findSongPopular(map.root, playlist, false);
         }
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
 
         cout << "Are you ok if the song is explicit?" << endl;
@@ -86,7 +86,7 @@ int main() {
             map.findSongExplicit(map.root, playlist, false);
         }
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
 
         cout << "Is there an artist you want to listen to? " << endl;
@@ -103,7 +103,7 @@ int main() {
 
             map.findSongArtist(map.root, playlist, name);
 
-            duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+            duration = (clock() - start) / (double)CLOCKS_PER_SEC;
             cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
         }
 
@@ -135,7 +135,7 @@ int main() {
             break;
         }
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
 
         cout << "How danceable do you want your song to be?" << endl;
@@ -148,7 +148,7 @@ int main() {
 
         map.findSongDance(map.root, playlist, c);
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
 
         cout << "How much energy do you want your song to be?" << endl;
@@ -161,7 +161,7 @@ int main() {
 
         map.findSongValence(map.root, playlist, c);
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
 
         cout << "How valence do you want your song to be?" << endl;
@@ -174,19 +174,12 @@ int main() {
 
         map.findSongEnergy(map.root, playlist, c);
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
 
         cout << "Ok, here are 5 songs that we think you might like" << endl;
         for (int i = 0; i < 5; i++) {
-            cout << playlist[i].getName() << ",";
-            cout << playlist[i].getArtist() << ",";
-            cout << playlist[i].getPopularity() << ",";
-            cout << playlist[i].getExplicit() << ",";
-            cout << playlist[i].getReleaseYear() << ",";
-            cout << playlist[i].getDanceability() << ",";
-            cout << playlist[i].getEnergy() << ",";
-            cout << playlist[i].getValence() << endl;
+            cout << playlist[i].getName() << " , " << playlist[i].getArtist() << endl;
         }
     }
     else { // if data structure is hash table
@@ -196,7 +189,7 @@ int main() {
 
         loadHashTable(table);
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to load Hash Table: " << duration << " seconds.\n" << endl;
 
         vector<Track> playlist;
@@ -215,7 +208,7 @@ int main() {
 
             playlist = table.findSongName(playlist, song);
 
-            duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+            duration = (clock() - start) / (double)CLOCKS_PER_SEC;
             cout << "Time taken to find song: " << duration << " seconds.\n" << endl;
         }
         cout << "Do you want to listen to a popular song?" << endl;
@@ -232,7 +225,7 @@ int main() {
             playlist = table.findSongPopular(playlist, false);
         }
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "Are you ok if the song is explicit?" << endl;
@@ -249,7 +242,7 @@ int main() {
             playlist = table.findSongExplicit(playlist, false);
         }
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "Is there an artist you want to listen to? " << endl;
@@ -264,7 +257,7 @@ int main() {
 
             playlist = table.findSongArtist(playlist, name);
 
-            duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+            duration = (clock() - start) / (double)CLOCKS_PER_SEC;
             cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
         }
         cout << "How old do you want your song to be" << endl;
@@ -295,7 +288,7 @@ int main() {
             break;
         }
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "How danceable do you want your song to be?" << endl;
@@ -308,7 +301,7 @@ int main() {
 
         playlist = table.findSongDance(playlist, c);
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "How much energy do you want your song to be?" << endl;
@@ -321,7 +314,7 @@ int main() {
 
         playlist = table.findSongValence(playlist, c);
 
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "How valence do you want your song to be?" << endl;
@@ -333,8 +326,8 @@ int main() {
         start = clock();
 
         playlist = table.findSongEnergy(playlist, c);
-    
-        duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+
+        duration = (clock() - start) / (double)CLOCKS_PER_SEC;
         cout << "Time taken to refine options: " << duration << " seconds.\n" << endl;
 
         cout << "Ok, here are 5 songs that we think you might like" << endl;
@@ -373,7 +366,7 @@ void loadHashTable(HashTable& table) {
 
         Track track(name, artist, stoi(popularity), stoi(xplicit), stoi(releaseYear), stof(danceability), stof(energy), stof(valence));
         table.insert(track);
-        
+
     }
 }
 
@@ -404,8 +397,8 @@ void loadMap(Map& map) {
         if (releaseYear.size() != 4) // update 'releaseYear' if needed
             releaseYear = releaseYear.substr(releaseYear.size() - 4, 4);
 
-        
+
         Track track(name, artist, stoi(popularity), stoi(xplicit), stoi(releaseYear), stof(danceability), stof(energy), stof(valence));
-        map.insert(track, map.root);    
+        map.insert(track, map.root);
     }
 }
