@@ -3,7 +3,7 @@
 #include <ctime>
 #include <iostream>
 using namespace std;
-extern const int SIZE = 130003;
+extern const int SIZE = 580419;
 
 int HashTable::hash(string key) { // hash algorithm
     int index = 0;
@@ -11,10 +11,10 @@ int HashTable::hash(string key) { // hash algorithm
     for (int i = 1; i <= key.size(); i++)
         index += key[i - 1] * i;
 
-    index = index % 130002;
+    index = index % 580471;
 
-    if (index < 0) { // if index is invalid, add track to last index
-        return 130002;
+    if (index < 0) { // if index is invalid, add track to 0th index
+        return 580418;
     }
     else
         return index;
@@ -224,19 +224,7 @@ vector<Track> HashTable::findSongValence(vector<Track>& playlist, char c)
 }
 void HashTable::Print(vector<Track>& playlist)
 {
-    int finish = 0;
-    for (int i = 0; i < SIZE; i++) {
-        for (auto it = hashTable[i].begin(); it != hashTable[i].end(); it++) {
-            if (finish == 5) {
-                exit;
-            }
-            if (it->getName() == "['']") {
-                continue;
-            }
-            else {
-                cout << it->getName() << " by " << it->getArtist() << endl;
-                finish++;
-            }
-        }
+    for (int i = 0; i < 5; i++) {
+         cout << playlist.at(i).getName() << " by " << playlist.at(i).getArtist() << endl;
     }
 }
