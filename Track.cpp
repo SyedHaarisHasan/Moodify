@@ -61,25 +61,3 @@ float Track::getEnergy() {
 float Track::getValence() {
     return valence;
 }
-
-// bool operator==(Track& lhs, Track& rhs) {
-//     if (lhs.name == rhs.name) {
-//         if (lhs.artist == rhs.artist) {
-//             if (lhs.popularity == rhs.popularity) {
-//                 if (lhs.xplicit == rhs.xplicit) {
-//                     if (lhs.releaseYear == rhs.releaseYear) {
-//                         if (lhs.danceability == rhs.danceability) {
-//                             if (lhs.energy == rhs.energy) {
-//                                 if (lhs.valence == rhs.valence) {
-//                                     return true;
-//                                 }
-//                             }   
-//                         }
-//                     }
-//                 }              
-//             }   
-//         }
-//     }
-
-//     return false;
-// }

@@ -33,13 +33,6 @@ list<Track> HashTable::operator[](int index) { // returns list of Tracks contain
     return hashTable[index];
 }
 
-void HashTable::printTable() { // prints the table // FOR DEBUGGING PURPOSES
-    for (int i = 0; i < SIZE; i++) {
-        for (auto it = hashTable[i].begin(); it != hashTable[i].end(); it++) {
-            cout << it->getName() << endl;
-        }
-    }
-}
 vector<Track> HashTable::findSongName(vector<Track>& playlist, string song)
 {
     for (int i = 0; i < SIZE; i++) {
